@@ -64,7 +64,7 @@ public class BankAccountTester {
 				"		  6. View account amounts\n" + 
 				"		  7. Exit\n");  
 		System.out.println();
-		System.out.println("Please enter your option below: ");	
+		System.out.println("Please enter your option (1-7) below: ");	
 		option = sc.nextInt();
 		int pick=0;
 		/**
@@ -253,6 +253,7 @@ public class BankAccountTester {
 		System.out.println("Your new savings account balance is: " +savingsAccount.getAccountBalance(savingsAccount));
 		Transaction deposit = new Transaction("DEPOSIT - Savings", "Current date", amount); // Creating a new object
 		return deposit;
+		
 	}
 	
 	/**
