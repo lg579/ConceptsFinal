@@ -1,11 +1,16 @@
+/**
+ * 
+ * @author Sunil Kotagiri, Pashmeet Arora, Lovika Gosain, Rashi Tripathi, Krupa Patel
+	Main Class tester
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BankAccountTester {
 	private static Transaction deposit;
 
-	//Person person1 = new Person("Amy", "Blue", "myUsername", "myPassword");
-	//Person person2 = new Person("Jack", "Green", "user", "pass");
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String name;
@@ -15,6 +20,10 @@ public class BankAccountTester {
 		String newUsername;
 		String newPassword;
 		ArrayList<Transaction> trans = new ArrayList<Transaction>();
+		/**
+		 * 
+		 * Sample person, account, and transaction objects 
+		 */
 		Person person1 = new Person("Amy", "Blue", "myUsername", "myPassword", 2543);
 		Person person2 = new Person("Jack", "Green", "user", "pass", 4653);
 		Account checkingAccount = new Account("Checking", 50);
@@ -28,14 +37,6 @@ public class BankAccountTester {
 		trans.add(transaction3);
 		
 		Scanner sc = new Scanner(System.in);
-		/*System.out.println("The name right now is "+ person1.getFirstName(person1));
-		System.out.println("change your name:");
-		name = sc.nextLine();
-		
-		person1.firstName = name;
-		
-		System.out.println("The new name is: " +person1.getFirstName(person1));
-		*/
 		
 		System.out.println("Welcome to the bank account application! Please begin to log in to your account. Enter your username:");
 		userName = sc.nextLine();
@@ -46,7 +47,10 @@ public class BankAccountTester {
 		System.out.println("Welcome " + person1.getFirstName(person1) + "!");
 		
 		
-		
+		/**
+		 * 
+		 * Loops through options and exits once user enters 7 to exit
+		 */
 		while (option != 7) {
 		System.out.println("------------------------------------------------------");
 		System.out.println("These are your options: ");
@@ -63,6 +67,9 @@ public class BankAccountTester {
 		System.out.println("Please enter your option below: ");	
 		option = sc.nextInt();
 		int pick=0;
+		/**
+		 * Change username
+		 */
 		if (option ==1) {
 			newUsername=changeUsername(person1);
 			
@@ -70,7 +77,10 @@ public class BankAccountTester {
 			System.out.println("Your new username is "+ person1.getUsername(person1));
 			System.out.println("Your details are now: "+ person1.toString());
 			}
-			
+		/**
+		 * 
+		 * Change Password	
+		 */
 		if (option ==2) {	
 				newPassword = changePassword(person1);
 				person1.setPassword(newPassword);
@@ -78,7 +88,10 @@ public class BankAccountTester {
 				System.out.println("Your details are now: "+ person1.toString());
 			
 		}
-		
+		/**
+		 * 
+		 * Deposit into an account
+		 */
 		if (option ==3) {
 			System.out.println("You have choosen option 3: ");
 			System.out.println("The amount in your checking account is: "+checkingAccount.getAccountBalance(checkingAccount));
@@ -99,16 +112,22 @@ public class BankAccountTester {
 			
 			
 		}
-		
+		/**
+		 * 
+		 * View account transactions 
+		 */
 		if (option ==4) {
-			//for (int i=0;i<trans.size();i++) {
+			
 				System.out.println("Your transaction details are: " );
 				System.out.println(trans.toString());
 				
-			//}
+			
 			
 		}
-		
+		/**
+		 * 
+		 * Transfer money from one account to another
+		 */
 		if (option ==5) {
 			pick =0;
 			System.out.println("To transfer money from checkings to savings, enter 1. To transfer money from savings to checkings, enter 2");
@@ -133,7 +152,10 @@ public class BankAccountTester {
 			
 		}
 		
-		
+		/**
+		 * 
+		 * View account details
+		 */
 		if (option==6) {
 			System.out.println("The amount in your checking account is: "+checkingAccount.getAccountBalance(checkingAccount));
 			System.out.println("The amount in your savings account is: "+savingsAccount.getAccountBalance(savingsAccount));
@@ -142,7 +164,10 @@ public class BankAccountTester {
 		
 		
 		}
-		
+		/**
+		 * 
+		 * End program
+		 */
 		System.out.println("Thank you for using our banking system! You have been logged off!");
 		
 		}
@@ -150,7 +175,12 @@ public class BankAccountTester {
 		
 		
 	
-	
+	/**
+	 * 
+	 * method to change username of account
+	 * @param person1
+	 * @return newUsername
+	 */
 	public static  String changeUsername(Person person1) {
 		Scanner sc = new Scanner(System.in);
 		String currentUsername;
@@ -163,7 +193,12 @@ public class BankAccountTester {
 			
 		}
 	
-	
+	/**
+	 * 
+	 * method to change password of account
+	 * @param person1
+	 * @return newPassword
+	 */
 	public static String changePassword(Person person1) {
 		Scanner sc = new Scanner(System.in);
 		String currentPassword;
@@ -177,7 +212,12 @@ public class BankAccountTester {
 			return newPassword;
 			
 		}
-	
+	/**
+	 * 
+	 * Method to make deposit into checking account 
+	 * @param checkingAccount
+	 * @return deposit transaction object
+	 */
 	public static Transaction makeDepositChecking(Account checkingAccount) {
 		Scanner sc = new Scanner(System.in);
 		int choice=0;
@@ -189,12 +229,17 @@ public class BankAccountTester {
 		int currentAmount = checkingAccount.getAccountBalance(checkingAccount)+amount;
 		checkingAccount.setAccountBalance(currentAmount);
 		System.out.println("Your new checking account balance is: " +checkingAccount.getAccountBalance(checkingAccount));
-		//trans.add("DEPOSIT","Current date", amount);
+		
 		Transaction deposit = new Transaction("DEPOSIT - Checking", "Current date", amount); // Creating a new object
 		return deposit;
-		//trans.add(deposit);
+
 	}
-		
+	/**
+	 * 
+	 * Method to make deposit into savings account
+	 * @param savingsAccount
+	 * @return deposit transaction object
+	 */
 	public static Transaction makeDepositSavings(Account savingsAccount) {
 		Scanner sc = new Scanner(System.in);
 		int choice=0;
@@ -210,6 +255,13 @@ public class BankAccountTester {
 		return deposit;
 	}
 	
+	/**
+	 * 
+	 * Method to tranfer money from checkings to savings account
+	 * @param checkingAccount
+	 * @param savingsAccount
+	 * @return transfer object details 
+	 */
 	public static Transaction transferCheckingToSavings(Account checkingAccount, Account savingsAccount) {
 		Scanner sc = new Scanner(System.in);
 		int amount=0;
@@ -224,6 +276,13 @@ public class BankAccountTester {
 		return transfer;
 	}
 	
+	/**
+	 * 
+	 * Method to transfer money from savings to checkings account
+	 * @param checkingAccount
+	 * @param savingsAccount
+	 * @return transfer object details
+	 */
 	public static Transaction transferSavingsToChecking(Account checkingAccount, Account savingsAccount) {
 		Scanner sc = new Scanner(System.in);
 		int amount=0;

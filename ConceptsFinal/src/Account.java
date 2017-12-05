@@ -1,10 +1,17 @@
-
+/**
+ * 
+ * @author Sunil Kotagiri, Pashmeet Arora, Lovika Gosain, Rashi Tripathi, Krupa Patel
+	Account Class
+ */
 public class Account {
 
 	String accountType;
 	int accountBalance;
 	
-	
+	/**
+	 * 
+	 * Account class constructor 
+	 */
 	public Account() {
 		
 		// TODO Auto-generated constructor stub
@@ -18,7 +25,11 @@ public class Account {
 		this.accountBalance = accountBalance;
 		
 	}
-	
+	/**
+	 * 
+	 * 
+	 * Account getter and setter methods for account type and accoutn balance
+	 */
 	public String getAccountType(Account account) {
 		return account.accountType;
 		

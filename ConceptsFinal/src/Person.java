@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Sunil Kotagiri, Pashmeet Arora, Lovika Gosain, Rashi Tripathi, Krupa Patel
+	Person Class
+ */
 public class Person {
 	
 	
@@ -8,7 +12,10 @@ public class Person {
 		String password = "";
 		int accountNum = 0;
 		
-		
+	/**
+	 * 
+	 * Person class constructor	
+	 */
 	public Person() {
 		
 		firstName = "";
@@ -27,7 +34,11 @@ public class Person {
 		this.password = password;
 		this.accountNum= accountNum;
 	}
-	
+	/**
+	 * 
+	 * 
+	 * Person class getter and setter methods for first name, last name, username, password, and account number
+	 */
 	public String getFirstName(Person person) {
 		return person.firstName;
 		
@@ -77,7 +88,10 @@ public class Person {
 		this.accountNum = accountNum;
 		
 	}
-
+	/**
+	 * 
+	 * toString method to print out person object details
+	 */
 	public String toString(){
 		return ("First Name: " + firstName +", Last Name: "+ lastName + ", Username: "+username + ", Password: "+password + ", Account number: "+ accountNum);
 		

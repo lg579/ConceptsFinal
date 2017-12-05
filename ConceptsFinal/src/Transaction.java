@@ -1,10 +1,18 @@
-
+/**
+ * 
+ * @author Sunil Kotagiri, Pashmeet Arora, Lovika Gosain, Rashi Tripathi, Krupa Patel
+	Transaction Class
+ */
 public class Transaction {
 
 	String location;
 	String date;
 	int transactionAmount;
 	
+	/**
+	 * 
+	 * Transaction class contructor 
+	 */
 	public Transaction() {
 		// TODO Auto-generated constructor stub
 		
@@ -19,7 +27,11 @@ public class Transaction {
 		this.transactionAmount = transactionAmount;
 		
 	}
-	
+	/**
+	 * 
+	 * 
+	 * getter and setter methods for location, date, and transaction amounts
+	 */
 	public String getLocation(Transaction transaction) {
 		return transaction.location;
 		
@@ -49,7 +61,10 @@ public class Transaction {
 		this.transactionAmount = transactionAmount;
 		
 	}
-	
+	/**
+	 * 
+	 * prints out transaction details 
+	 */
 	public String toString(){
 		return ("\nTransaction location: " + location +", Transaction date: "+ date + ", Transaction amount: "+transactionAmount + " ");
 		
