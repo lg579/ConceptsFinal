@@ -20,11 +20,12 @@ public class Person {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Person(String firstName, String lastName, String username, String password){
+	public Person(String firstName, String lastName, String username, String password, int accountNum){
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
+		this.accountNum= accountNum;
 	}
 	
 	public String getFirstName(Person person) {
@@ -77,4 +78,8 @@ public class Person {
 		
 	}
 
+	public String toString(){
+		return ("First Name: " + firstName +", Last Name: "+ lastName + ", Username: "+username + ", Password: "+password + ", Account number: "+ accountNum);
+		
+	}
 }

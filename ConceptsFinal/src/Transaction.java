@@ -50,4 +50,9 @@ public class Transaction {
 		
 	}
 	
+	public String toString(){
+		return ("\nTransaction location: " + location +", Transaction date: "+ date + ", Transaction amount: "+transactionAmount + " ");
+		
+	}
+	
 }
